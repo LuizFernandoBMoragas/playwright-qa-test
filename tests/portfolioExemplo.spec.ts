@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { Portfolio } from '../pages/Portfolio';
+import { PortfolioPage } from '../pages/portfolioPage';
 
 test('1inch portfolio page has correct title', async ({ page }) => {
-  const PortfolioPage = new Portfolio(page);
+  const Portfolio = new PortfolioPage(page);
 
-  await PortfolioPage.navigate();
+  await Portfolio.navigateToPortfolio();
   await expect(page).toHaveTitle('1inch Portfolio');
 });

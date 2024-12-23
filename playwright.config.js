@@ -3,10 +3,11 @@ const { defineConfig } = require('@playwright/test');
 module.exports = defineConfig({
   globalSetup: require.resolve('./tests/test.setup.ts'),
   testDir: './tests',
-  timeout: 30000,
-  retries: 2,
+  timeout: 10000,
+  retries: 0,
   use: {
-    headless: true,
+    headless: false,
+    slowMo: 1000,
     viewport: { width: 1280, height: 720 },
   },
 });
