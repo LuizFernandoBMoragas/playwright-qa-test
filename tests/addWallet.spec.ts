@@ -53,15 +53,13 @@ test.describe('Connect Wallet Test Suite', () => {
     await portfolioPage.walletPresentInHeader();
     await portfolioPage.openDropdownMenu();
 
-    const walletButton = page.getByRole('button', { name: 'vitalik.eth $5 028' });
+    const button = page.locator('button.account-option');
+    const smallTag = button.locator('small.account-option-value');
+    const smallText = await smallTag.textContent();
+    const numericValue = smallText?.trim().replace(/\$/g, '').replace(/\s+/g, '');
+    console.log(numericValue);
 
-    const buttonText = await walletButton.innerText();
-    console.log(buttonText);
-    const usdValueFromButton = buttonText.split('$')[1].trim();
-    const currentValue = usdValueFromButton.replace(/\s+/g, '');
-    console.log(currentValue)
-
-    expect(currentValue).toBe(amountInUSD);
-    console.log(`USD value in button: ${currentValue}, expected: ${amountInUSD}.`);
+    expect(numericValue).toBe(amountInUSD);
+    console.log(`USD value in button: ${numericValue}, expected: ${amountInUSD}.`);
   });
 });
