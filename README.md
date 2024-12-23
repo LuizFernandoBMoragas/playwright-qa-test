@@ -61,9 +61,9 @@ npx playwright test tests/addWallet.spec.ts
 ## Test results will be stored in the test-results/ folder.
 
 **Test Setup**
-### Global Setup: The tests are set up to run with a global configuration, including environment setup, API helpers, and locators.
-### Page Objects: Tests use the Page Object Model (POM) pattern. Page objects are located in the pages/ folder.
-### Locators: Element locators are stored in the locators/ folder, segregating general and wallet-specific locators.
+Global Setup: The tests are set up to run with a global configuration, including environment setup, API helpers, and locators.
+Page Objects: Tests use the Page Object Model (POM) pattern. Page objects are located in the pages/ folder.
+Locators: Element locators are stored in the locators/ folder, segregating general and wallet-specific locators.
 
 ## ESLint
 To ensure code quality, ESLint is set up with the .eslintrc.js configuration. You can run linting with:
@@ -73,4 +73,5 @@ npx eslint .
 
 ## **Notes**
 The .env file is ignored by Git to keep sensitive information safe.
+
 Test results are stored in the test-results/ folder, which is also ignored by Git.
