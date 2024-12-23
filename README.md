@@ -62,7 +62,9 @@ npx playwright test tests/addWallet.spec.ts
 
 **Test Setup**
 Global Setup: The tests are set up to run with a global configuration, including environment setup, API helpers, and locators.
+
 Page Objects: Tests use the Page Object Model (POM) pattern. Page objects are located in the pages/ folder.
+
 Locators: Element locators are stored in the locators/ folder, segregating general and wallet-specific locators.
 
 ## ESLint
